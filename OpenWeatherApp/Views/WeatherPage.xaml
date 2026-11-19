@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="OpenWeatherApp.Views.WeatherPage"
+    Title="Weather">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="20"
+            BackgroundColor="#F0F7FF">
+
+            <Label
+                Text="WeatherApp"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#174EA6"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="Your local weather at a glance"
+                FontSize="14"
+                TextColor="Gray"
+                HorizontalOptions="Center"/>
+
+            <!-- API Key Section -->
+
+            <Border
+                BackgroundColor="White"
+                Stroke="#D5E5F5"    
+                StrokeShape="RoundRectangle 15"
+                Padding="15">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label
+                        Text="OpenWeather API Key"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#174EA6"/>
+
+                    <Entry
+                        x:Name="ApiKeyEntry"
+                        Placeholder="Enter your API key"
+                        IsPassword="True"
+                        ClearButtonVisibility="WhileEditing"/>
+
+                    <Button
+                        x:Name="SaveApiKeyButton"
+                        Text="Save API Key"
+                        BackgroundColor="#174EA6"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnSaveApiKeyClicked"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Weather Information -->
+
+            <Border
+                BackgroundColor="#174EA6"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 20"
+                Padding="25">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label
+                        Text="Current Weather"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        HorizontalOptions="Center"/>
+
+                    <Label
+                        x:Name="CityLabel"
+                        Text="Your Location"
+                        FontSize="22"
+                        TextColor="White"
+                        HorizontalOptions="Center"/>
+
+                    <Label
+                        x:Name="TemperatureLabel"
+                        Text="--°C"
+                        FontSize="55"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        HorizontalOptions="Center"/>
+
+                    <Label
+                        x:Name="DescriptionLabel"
+                        Text="Waiting for weather data..."
+                        FontSize="17"
+                        TextColor="White"
+                        HorizontalOptions="Center"/>
+
+                    <Label
+                        x:Name="FeelsLikeLabel"
+                        Text="Feels like: --°C"
+                        TextColor="White"
+                        HorizontalOptions="Center"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Additional Weather Details -->
+
+            <Grid ColumnDefinitions="*,*"
+                  ColumnSpacing="15">
+
+                <Border
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    Stroke="#D5E5F5"
+                    StrokeShape="RoundRectangle 15"
+                    Padding="15">
+
+                    <VerticalStackLayout Spacing="8">
+
+                        <Label
+                            Text="Humidity"
+                            FontAttributes="Bold"
+                            TextColor="#174EA6"
+                            HorizontalOptions="Center"/>
+
+                        <Label
+                            x:Name="HumidityLabel"
+                            Text="--%"
+                            FontSize="25"
+                            TextColor="#174EA6"
+                            HorizontalOptions="Center"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    Grid.Column="1"
+                    BackgroundColor="White"
+                    Stroke="#D5E5F5"
+                    StrokeShape="RoundRectangle 15"
+                    Padding="15">
+
+                    <VerticalStackLayout Spacing="8">
+
+                        <Label
+                            Text="Wind Speed"
+                            FontAttributes="Bold"
+                            TextColor="#174EA6"
+                            HorizontalOptions="Center"/>
+
+                        <Label
+                            x:Name="WindSpeedLabel"
+                            Text="-- m/s"
+                            FontSize="25"
+                            TextColor="#174EA6"
+                            HorizontalOptions="Center"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+
+            <!-- Loading and Error Messages -->
+
+            <ActivityIndicator
+                x:Name="LoadingIndicator"
+                IsRunning="False"
+                IsVisible="False"
+                Color="#174EA6"/>
+
+            <Label
+                x:Name="ErrorLabel"
+                Text=""
+                TextColor="Red"
+                HorizontalOptions="Center"/>
+
+            <Button
+                x:Name="RefreshButton"
+                Text="Refresh Weather"
+                BackgroundColor="#174EA6"
+                TextColor="White"
+                CornerRadius="12"
+                Clicked="OnRefreshWeatherClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

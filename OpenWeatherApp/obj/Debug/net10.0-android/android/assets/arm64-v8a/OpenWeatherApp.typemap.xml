@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="OpenWeatherApp" mvid="8503a4e43bc147e589da396808099d94">
+  <java-to-managed>
+    <entry java-name="crc6466c28ee5e916082c/MainActivity" managed-name="OpenWeatherApp.MainActivity, OpenWeatherApp" managed-type-token-id="33554440" />
+    <entry java-name="crc6466c28ee5e916082c/MainApplication" managed-name="OpenWeatherApp.MainApplication, OpenWeatherApp" managed-type-token-id="33554441" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc6466c28ee5e916082c/MainActivity" managed-name="OpenWeatherApp.MainActivity, OpenWeatherApp" managed-type-token-id="33554440" />
+    <entry java-name="crc6466c28ee5e916082c/MainApplication" managed-name="OpenWeatherApp.MainApplication, OpenWeatherApp" managed-type-token-id="33554441" />
+  </managed-to-java>
+</api>
