@@ -82,6 +82,13 @@
                         TextColor="White"
                         HorizontalOptions="Center"/>
 
+                    <Image
+                        x:Name="WeatherIcon"
+                        HeightRequest="110"
+                        WidthRequest="110"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Center"/>
+
                     <Label
                         x:Name="TemperatureLabel"
                         Text="--°C"

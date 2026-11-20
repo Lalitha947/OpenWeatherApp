@@ -29,6 +29,7 @@ public class WeatherViewModel : INotifyPropertyChanged
             OnPropertyChanged(nameof(CityName));
             OnPropertyChanged(nameof(Temperature));
             OnPropertyChanged(nameof(WeatherDescription));
+            OnPropertyChanged(nameof(IconUrl));
             OnPropertyChanged(nameof(Humidity));
             OnPropertyChanged(nameof(WindSpeed));
         }
@@ -40,6 +41,11 @@ public class WeatherViewModel : INotifyPropertyChanged
 
     public string WeatherDescription =>
         Weather?.Description ?? "Weather information unavailable";
+
+    public string IconUrl =>
+    Weather?.Icon != null
+        ? $"https://openweathermap.org/img/wn/{Weather.Icon}@2x.png"
+        : string.Empty;
 
     public int Humidity => Weather?.Humidity ?? 0;
 

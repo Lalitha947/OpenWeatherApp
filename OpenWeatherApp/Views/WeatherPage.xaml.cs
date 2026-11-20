@@ -42,6 +42,9 @@ public partial class WeatherPage : ContentPage
         if (_viewModel.Weather != null)
         {
             CityLabel.Text = _viewModel.Weather.CityName;
+
+            WeatherIcon.Source = _viewModel.IconUrl;
+
             TemperatureLabel.Text =
                 $"{_viewModel.Weather.Temperature:F1}°C";
 
